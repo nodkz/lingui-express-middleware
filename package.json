@@ -1,0 +1,50 @@
+{
+  "name": "lingui-express-middleware",
+  "version": "0.0.0-development",
+  "description": "express middleware for linguijs",
+  "main": "./dist/index.js",
+  "keywords": [
+    "linguijs",
+    "lingui-express",
+    "express",
+    "middleware",
+    "i18n",
+    "internationalization",
+    "i10n",
+    "localization",
+    "i9n",
+    "translation"
+  ],
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/nodkz/lingui-express-middleware",
+  "bugs": "https://github.com/nodkz/lingui-express-middleware/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nodkz/lingui-express-middleware.git"
+  },
+  "dependencies": {
+    "cookies": "0.7.1",
+    "typescript": "^3.5.2"
+  },
+  "devDependencies": {
+    "@types/cookies": "^0.7.2",
+    "@types/express": "^4.17.0",
+    "@types/node": "12.0.8",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "express": "^4.17.1",
+    "prettier": "^1.18.2",
+    "semantic-release": "^15.13.16",
+    "typescript": "3.5.2"
+  },
+  "scripts": {
+    "build": "babel src -d lib"
+  },
+  "author": "Pavel Chertorogov <pavel.chertorogov@gmail.com>",
+  "license": "MIT"
+}
