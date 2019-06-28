@@ -1,14 +1,14 @@
-import { Request, Response } from 'express';
+import { Detector } from '../types';
 
 export interface PathOptions {
   lookupPath?: string;
   lookupFromPathIndex?: number;
 }
 
-export default {
+const detector: Detector<PathOptions> = {
   name: 'path',
 
-  lookup(req: Request, res: Response, options: PathOptions) {
+  lookup(req, res, options) {
     let found;
 
     if (req === undefined) {
@@ -35,3 +35,5 @@ export default {
     return found;
   },
 };
+
+export default detector;

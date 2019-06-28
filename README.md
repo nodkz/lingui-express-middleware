@@ -1,16 +1,13 @@
 # WIP ✋not ready yet
 
-# Introduction
+This is a middleware to use lingui-js in express.js.
 
-This is a middleware to use i18next in express.js.
+## Getting started
 
-# Getting started
-
-Source can be loaded via [npm](https://www.npmjs.com/package/lingui-express-middleware).
-
-```
-# npm package
-$ npm install lingui-express-middleware
+```bash
+yarn add lingui-express-middleware
+# or
+npm install lingui-express-middleware
 ```
 
 ## wire up i18next to request object
@@ -128,10 +125,10 @@ app.listen(port, function() {
 Detects user language from current request. Comes with support for:
 
 - path
+- session
+- querystring
 - cookie
 - header
-- querystring
-- session
 
 Wiring up:
 
@@ -234,12 +231,6 @@ i18next.use(lngDetector).init({
 });
 ```
 
----
+## License
 
-<h3 align="center">Gold Sponsors</h3>
-
-<p align="center">
-  <a href="https://locize.com/" target="_blank">
-    <img src="https://raw.githubusercontent.com/i18next/i18next/master/assets/locize_sponsor_240.gif" width="240px">
-  </a>
-</p>
+[MIT](./LICENSE)

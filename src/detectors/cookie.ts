@@ -1,5 +1,5 @@
 import Cookies from 'cookies';
-import { Request, Response } from 'express';
+import { Detector } from '../types';
 
 export interface CookieOptions {
   lookupCookie?: string;
@@ -8,10 +8,10 @@ export interface CookieOptions {
   cookieSecure?: boolean;
 }
 
-export default {
+const detector: Detector<CookieOptions> = {
   name: 'cookie',
 
-  lookup(req: Request, res: Response, options: CookieOptions) {
+  lookup(req, res, options) {
     let found;
 
     if (options.lookupCookie && typeof req !== 'undefined') {
@@ -26,7 +26,7 @@ export default {
     return found;
   },
 
-  cacheUserLanguage(req: Request, res: Response, lng: string, options: CookieOptions = {}) {
+  cacheUserLanguage(req, res, lng, options = {}) {
     if (options.lookupCookie && !req && !res.headersSent) {
       const cookies = new Cookies(req, res);
 
@@ -52,3 +52,5 @@ export default {
     }
   },
 };
+
+export default detector;

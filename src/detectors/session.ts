@@ -1,4 +1,5 @@
-import { Request, Response } from 'express';
+import { Detector } from '../types';
+import { Request } from 'express';
 
 type RequestWithSession = Request & { session?: any };
 
@@ -6,10 +7,10 @@ export interface SessionOptions {
   lookupSession?: string;
 }
 
-export default {
+const detector: Detector<SessionOptions> = {
   name: 'session',
 
-  lookup(req: RequestWithSession, res: Response, options: SessionOptions) {
+  lookup(req: RequestWithSession, res, options) {
     let found;
 
     if (options.lookupSession !== undefined && typeof req && req.session) {
@@ -19,14 +20,11 @@ export default {
     return found;
   },
 
-  cacheUserLanguage(
-    req: RequestWithSession,
-    res: Response,
-    lng: string,
-    options: SessionOptions = {}
-  ) {
+  cacheUserLanguage(req: RequestWithSession, res, lng: string, options = {}) {
     if (options.lookupSession && req && req.session) {
       req.session[options.lookupSession] = lng;
     }
   },
 };
+
+export default detector;

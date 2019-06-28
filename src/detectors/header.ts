@@ -1,13 +1,13 @@
-import { Request, Response } from 'express';
+import { Detector } from '../types';
 
 export interface HeaderOptions {
   lookupHeader?: string;
 }
 
-export default {
+const detector: Detector<HeaderOptions> = {
   name: 'header',
 
-  lookup(req: Request, res: Response, options: HeaderOptions) {
+  lookup(req, res, options) {
     let found;
 
     if (typeof req !== 'undefined') {
@@ -52,3 +52,5 @@ export default {
     return found;
   },
 };
+
+export default detector;

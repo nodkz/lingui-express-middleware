@@ -1,14 +1,14 @@
 import url from 'url';
-import { Request, Response } from 'express';
+import { Detector } from '../types';
 
-export interface QueryStringOptions {
+export interface QuerystringOptions {
   lookupQuerystring?: string;
 }
 
-export default {
+const detector: Detector<QuerystringOptions> = {
   name: 'querystring',
 
-  lookup(req: Request, res: Response, options: QueryStringOptions) {
+  lookup(req, res, options) {
     let found;
 
     if (options.lookupQuerystring !== undefined && typeof req !== 'undefined') {
@@ -23,3 +23,5 @@ export default {
     return found;
   },
 };
+
+export default detector;
