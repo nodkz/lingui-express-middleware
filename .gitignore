@@ -3,6 +3,7 @@
 .monitor
 .DS_Store
 *.orig
+yarn-error.log
 npm-debug.log
 npm-debug.log.*
 *.dat

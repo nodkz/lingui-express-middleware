@@ -84,6 +84,7 @@ class LanguageDetector {
 
     const supported = negotiateLanguages(detections, availableLocales, {
       strategy: 'lookup',
+      defaultLocale: this.options.defaultLocale,
     });
     if (supported && supported[0]) return supported[0];
 

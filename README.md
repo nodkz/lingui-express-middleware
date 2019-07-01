@@ -120,7 +120,7 @@ app.listen(port, function() {
 });
 ```
 
-## language detection
+## Language detection
 
 Detects user language from current request. Comes with support for:
 
@@ -145,24 +145,24 @@ As with all modules you can either pass the constructor function (class) to the 
 
 ```js
 {
-  // order and from where user language should be detected
   order: [/*'path', 'session', */ 'querystring', 'cookie', 'header'],
+  caches: ['cookie'], // ['cookie', 'session'] or false // cache user language
+  defaultLocale: 'en',
+  availableLocales: ['en'],
 
-  // keys or params to lookup language from
-  lookupQuerystring: 'lng',
-  lookupCookie: 'i18next',
-  lookupHeader: 'accept-language',
-  lookupSession: 'lng',
-  lookupPath: 'lng',
-  lookupFromPathIndex: 0,
+  lookupPath: 'lang', // named param
+  lookupFromPathIndex: 0, // by index of splitted path
 
-  // cache user language
-  caches: false, // ['cookie']
+  lookupSession: 'lang',
 
-  // optional expire and domain for set cookie
-  cookieExpirationDate: new Date(),
-  cookieDomain: 'myDomain',
-  cookieSecure: true // if need secure cookie
+  lookupQuerystring: 'lang',
+
+  lookupCookie: 'lang',
+  // cookieExpirationDate: new Date(), // by default 1 year
+  // cookieDomain: 'myDomain',
+  // cookieSecure: true,
+
+  lookupHeader: 'accept-language', // by default 'accept-language'
 }
 ```
 

@@ -16,7 +16,7 @@
     "translation"
   ],
   "files": [
-    "dist"
+    "lib"
   ],
   "homepage": "https://github.com/nodkz/lingui-express-middleware",
   "bugs": "https://github.com/nodkz/lingui-express-middleware/issues",
@@ -25,27 +25,31 @@
     "url": "git://github.com/nodkz/lingui-express-middleware.git"
   },
   "dependencies": {
-    "cookies": "0.7.1",
-    "fluent-langneg": "^0.1.1",
-    "typescript": "^3.5.2"
+    "@lingui/cli": "^3.0.0-6",
+    "@lingui/conf": "^3.0.0-6",
+    "@lingui/core": "^3.0.0-6",
+    "babel-core": "^6.26.3",
+    "cookies": "^0.7.1",
+    "fluent-langneg": "^0.1.1"
   },
   "devDependencies": {
     "@types/cookies": "^0.7.2",
     "@types/express": "^4.17.0",
     "@types/fluent-langneg": "^0.1.1",
-    "@types/node": "12.0.8",
-    "@typescript-eslint/eslint-plugin": "^1.10.2",
-    "@typescript-eslint/parser": "^1.10.2",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^5.0.0",
+    "@types/node": "12.0.10",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "express": "^4.17.1",
     "prettier": "^1.18.2",
-    "semantic-release": "^15.13.16",
-    "typescript": "3.5.2"
+    "semantic-release": "^15.13.18",
+    "typescript": "^3.5.2"
   },
   "scripts": {
-    "build": "babel src -d lib"
+    "build": "tsc --build tsconfig.json",
+    "watch-example": "cd examples/simple && npm run watch"
   },
   "author": "Pavel Chertorogov <pavel.chertorogov@gmail.com>",
   "license": "MIT"

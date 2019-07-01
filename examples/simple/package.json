@@ -1,0 +1,24 @@
+{
+  "name": "simple",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "ts-node-dev --respawn --no-notify --transpileOnly src/index.ts",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@lingui/cli": "^3.0.0-6",
+    "@lingui/conf": "^3.0.0-6",
+    "@lingui/macro": "^3.0.0-6",
+    "babel-plugin-macros": "^2.6.1",
+    "express": "^4.17.1",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "typescript": "^3.5.2"
+  }
+}

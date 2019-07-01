@@ -18,21 +18,6 @@ export function setPath(object: any, path: string, newValue: any) {
   object[key] = newValue;
 }
 
-let arr: [] = [];
-let each = arr.forEach;
-let slice = arr.slice;
-
-export function defaults(obj: any) {
-  each.call(slice.call(arguments, 1), (source: any) => {
-    if (source) {
-      for (var prop in source) {
-        if (obj[prop] === undefined) obj[prop] = source[prop];
-      }
-    }
-  });
-  return obj;
-}
-
 export function removeLngFromUrl(url: string, lookupFromPathIndex: number) {
   let first = '';
   let pos = lookupFromPathIndex;
